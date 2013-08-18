@@ -1,1 +1,1 @@
-/usr/local/Cellar/go/1.1.1/misc/vim/indent/go.vim
+/opt/boxen/goenv/versions/1.1.1/misc/vim/indent/go.vim
