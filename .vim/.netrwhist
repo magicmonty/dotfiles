@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/martingondermann/.oh-my-zsh'
+let g:netrw_dirhist_2='/Users/martingondermann/Development/SystemicConsent/.git'
+let g:netrw_dirhist_3='/Users/martingondermann/Development/AutoTest.Net/gems'
+let g:netrw_dirhist_4='/Users/martingondermann/Development/AutoTest.Net/build.custom'
+let g:netrw_dirhist_5='/Users/martingondermann/Development/blog_github/config'
