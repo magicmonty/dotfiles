@@ -2,6 +2,7 @@ set nu
 color murphy
 set ic
 set smartcase
+set nowrap
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
