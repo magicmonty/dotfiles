@@ -37,7 +37,7 @@ plugins=(git github sublime)
 source $ZSH/oh-my-zsh.sh
 
 export GOPATH=$HOME/Development/go
-export GOROOT=/usr/local/Cellar/go/1.1.1
+export GOROOT=/opt/boxen/goenv/versions/1.1.1
 export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$GOPATH/bin
 
 source /opt/boxen/env.sh
