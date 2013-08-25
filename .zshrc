@@ -36,11 +36,6 @@ plugins=(git github sublime)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export BLOG_FTP_USER="1855-wsdeploy"
-export BLOG_FTP_PASSWORD="7Dz4H96I1f"
-export BLOG_FTP_URL="blog.pagansoft.de"
-
 export GOROOT=$HOME/Development/go
 export GOPATH=/opt/boxen/goenv/versions/1.1.1
 export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$GOPATH/bin
