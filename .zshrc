@@ -39,10 +39,20 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/Development/go
 export GOROOT=/opt/boxen/goenv/versions/1.1.1
 export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$GOPATH/bin
-export GITHUB_API_TOKEN=4b48e9701bd218ee88f3642d1afaaebbdf72a572
-export DOCKER_HOST=tcp://127.0.0.1:4244
 
 source /opt/boxen/env.sh
+
+w() {
+    clear &&  ls -l && echo && git branch && echo && git status --short --branch
+}
+ 
+dn() {
+    git status --short --branch | grep '^.[DM\?]' | head -1 | awk '$1 ~ /[MD]/ {print $2} $1 ~ /\?/ {print "/dev/null " $2}' | xargs git diff -- && w
+}
+ 
+an() {
+    git status --short --branch | grep '^.[DM\?]' | head -1 | awk '$1 ~ /[M?]/ {print "add " $2} $1 ~ /D/ {print "rm " $2}' | xargs git && w
+}
 
 export TERM=xterm-256color
 export CLICOLOR=1
