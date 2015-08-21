@@ -74,14 +74,9 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
 alias gk='gitk --all&'
 
 alias got='git '
-alias get='git '
-
-# source kvm.sh
-#source /Users/martingondermann/src/chgo/share/chgo/chgo.sh
-#source $CHGO_ROOT/share/chgo/auto.sh
+alias get='git checkout'
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
