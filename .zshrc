@@ -37,11 +37,18 @@ plugins=(git github sublime)
 source $ZSH/oh-my-zsh.sh
 
 export GOPATH=$HOME/Development/go
-export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$GOPATH/bin
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$GOPATH/bin
 export GITHUB_API_TOKEN=4b48e9701bd218ee88f3642d1afaaebbdf72a572
 export DOCKER_HOST=tcp://127.0.0.1:4244
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source $HOME/dotfiles/chgo/share/chgo/chgo.sh
+  source $CHGO_ROOT/share/chgo/auto.sh
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+  if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+fi
 
 w() {
     clear &&  ls -l && echo && git branch && echo && git status --short --branch
@@ -76,3 +83,5 @@ alias get='git '
 # source kvm.sh
 #source /Users/martingondermann/src/chgo/share/chgo/chgo.sh
 #source $CHGO_ROOT/share/chgo/auto.sh
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

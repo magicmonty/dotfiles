@@ -1,5 +1,6 @@
 
 set nocompatible
+let mapleader=","
 set shortmess+=I        " Don't show the Vim welcome screen.
 set clipboard=unnamedplus " use system clipboard with * register
 
@@ -42,7 +43,7 @@ set shiftround          " Round indent to a multiple of 'shiftwidth'.
 
 set ignorecase          " Ignore case for pattern matches (\C overrides).
 set smartcase           " Override 'ignorecase' if pattern contains uppercase.
-set nowrapscan          " Don't allow searches to wrap around EOF.
+set wrapscan          " Don't allow searches to wrap around EOF.
 
 set nocursorline        " Don't highlight the current screen line...
 set nocursorcolumn      " ...or screen column...
@@ -224,31 +225,6 @@ set mousemodel=popup
 "
 vnoremap <BS> d
 
-" Control+A is Select All.
-"
-noremap  <C-A>  gggH<C-O>G
-inoremap <C-A>  <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A>  <C-C>gggH<C-O>G
-onoremap <C-A>  <C-C>gggH<C-O>G
-snoremap <C-A>  <C-C>gggH<C-O>G
-xnoremap <C-A>  <C-C>ggVG
-
-" Control+S saves the current file (if it's been changed).
-"
-noremap  <C-S>  :update<CR>
-vnoremap <C-S>  <C-C>:update<CR>
-inoremap <C-S>  <C-O>:update<CR>
-
-" Control+Z is Undo, in Normal and Insert mode.
-"
-noremap  <C-Z>  u
-inoremap <C-Z>  <C-O>u
-
-" F2 inserts the date and time at the cursor.
-"
-inoremap <F2>   <C-R>=strftime("%c")<CR>
-nmap     <F2>   a<F2><Esc>
-
 " F7 formats the current/highlighted paragraph.
 "
 " XXX: Consider changing this to gwap to maintain logical cursor position.
@@ -274,6 +250,7 @@ vnoremap <S-Tab>  <gv
 " Map Control+Up/Down to move lines and selections up and down.
 "
 runtime map_line_block_mover_keys.vim
+runtime vim-fireplace-mappings.vim
 
 " Disable paste-on-middle-click.
 "
@@ -332,7 +309,7 @@ inoremap <C-U>= <Esc>kyyp^v$r=ja
 
 " Edit user's vimrc and gvimrc in new tabs.
 "
-nnoremap ,ev  :tabedit $MYGVIMRC<CR>:tabedit $MYVIMRC<CR>
+nnoremap <Leader>ev  :tabedit $MYGVIMRC<CR>:tabedit $MYVIMRC<CR>
 
 " Make page-forward and page-backward work in insert mode.
 "
@@ -367,20 +344,20 @@ inoremap <expr> <S-Tab>  InsertMatchingSpaces()
 " From this message on the MacVim mailing list:
 " http://groups.google.com/group/vim_mac/browse_thread/thread/31876ef48063e487/133e06134425bda1?hl=en¿e06134425bda1
 "
-nnoremap \zz  :let &scrolloff=999-&scrolloff<CR>
+nnoremap <Leader>zz  :let &scrolloff=999-&scrolloff<CR>
 
 " Toggle wrapping the display of long lines (and display the current 'wrap'
 " state once it's been toggled).
 "
-nnoremap \w  :set invwrap<BAR>set wrap?<CR>
+nnoremap <Leader>w  :set invwrap<BAR>set wrap?<CR>
 
 " Toggle the NERD Tree window
 "
-nnoremap ,.  :NERDTreeToggle<CR>
+nnoremap <Leader>.  :NERDTreeToggle<CR>
 
 " Make it easy to :Tabularize
 "
-nnoremap \<Tab> <Esc>:Tabularize /
+nnoremap <Leader><Tab> <Esc>:Tabularize /
 
 " Make the dot command operate over a Visual range.
 " (Excellent tip from Drew Neil's Vim Masterclass.)
@@ -389,8 +366,8 @@ xnoremap .  :normal .<CR>
 
 " Shortcuts to commonly-used fugitive.vim features
 "
-nnoremap \gs  :Gstatus<CR>
-nnoremap \gd  :Gdiff<CR>
+nnoremap <Leader>gs  :Gstatus<CR>
+nnoremap <Leader>gd  :Gdiff<CR>
 
 
 """
@@ -398,7 +375,6 @@ nnoremap \gd  :Gdiff<CR>
 """
 
 runtime set_abbreviations.vim
-
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -440,3 +416,21 @@ function! s:ConfigureWindow()
     call matchadd('Todo', 'MRB:')
 
 endfunction
+
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+      \ "\<lt>C-n>" :
+      \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+      \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+      \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
+nnoremap <leader><Tab> :tabNext<cr>
+let g:NERDTreeQuitOnOpen=1
+
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+imap <buffer> <C-e> <Esc><Esc>ms[[cpp`sl
+nmap <buffer> <C-e> ms[[cpp`s

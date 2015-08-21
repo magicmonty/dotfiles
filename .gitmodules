@@ -28,3 +28,36 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule ".vim/bundle/scss-syntax.vim"]
+	path = .vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule ".vim/bundle/liquid.vim"]
+	path = .vim/bundle/liquid.vim
+	url = https://github.com/vim-scripts/liquid.vim.git
+[submodule ".vim/bundle/liquidfold.vim"]
+	path = .vim/bundle/liquidfold.vim
+	url = https://github.com/vim-scripts/liquidfold.vim.git
+[submodule ".vim/bundle/vim-glsl"]
+	path = .vim/bundle/vim-glsl
+	url = https://github.com/tikhomirov/vim-glsl.git
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/neocomplete.vim"]
+	path = .vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule ".vim/bundle/vim-sexp-mappings-for-regular-people"]
+	path = .vim/bundle/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule ".vim/bundle/vim-sexp"]
+	path = .vim/bundle/vim-sexp
+	url = https://github.com/guns/vim-sexp.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "chgo"]
+	path = chgo
+url=https://github.com/magicmonty/chgo.git
