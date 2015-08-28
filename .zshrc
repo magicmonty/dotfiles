@@ -40,6 +40,7 @@ export GOPATH=$HOME/Development/go
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$GOPATH/bin
 export GITHUB_API_TOKEN=4b48e9701bd218ee88f3642d1afaaebbdf72a572
 export DOCKER_HOST=tcp://127.0.0.1:4244
+export EDITOR=/usr/local/bin/vim
 
 if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh

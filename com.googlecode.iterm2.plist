@@ -750,9 +750,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 400 606 456 0 0 1440 877 </string>
+	<string>269 337 618 519 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 22 1438 851 0 0 1440 877 </string>
+	<string>0 23 1440 851 0 0 1440 877 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E966DA87-D73D-4C96-9F55-66B400631026</key>
@@ -763,7 +763,9 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>Allow Title Reporting</key>
-			<true/>
+			<false/>
+			<key>Allow Title Setting</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1002,7 +1004,7 @@
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>1</real>
+			<real>0.99391119164156616</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -1278,11 +1280,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>Monoid-Retina 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>Monoid-Retina 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1447,8 +1449,10 @@
 			<false/>
 			<key>Use Italic Font</key>
 			<true/>
+			<key>Use Non-ASCII Font</key>
+			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>0.99645260730421681</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2891,7 +2895,7 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>461791489.72486198</real>
+	<real>462220469.07328397</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2900,6 +2904,10 @@
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -2967,7 +2975,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-20T19:24:48Z</date>
+	<date>2015-08-25T18:34:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

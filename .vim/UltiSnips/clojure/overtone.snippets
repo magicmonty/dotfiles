@@ -178,3 +178,26 @@ snippet record "start recording"
 (recording-stop)
 )
 endsnippet
+
+snippet onbeatt "On beat timed"
+(on-beat beat ${1:4} ${2:4} #(do
+                               (at (+ t (mspb metro ${3:0.25}))
+                                 (do
+                                   $0))))
+endsnippet
+
+snippet onbeat "on-beat"
+(on-beat beat ${1:4} ${2:4} #(do
+                               $0))
+endsnippet
+
+snippet defsynth "Synth definition"
+(defsynth ${1:sine} [freq 440 out-bus 0]
+  (let [sig (sin-osc :freq freq)
+        env (env-gen:kr (perc) :action FREE)]
+    (out:ar out-bus (* env sig))))
+endsnippet
+
+snippet nf "Note to freq"
+(midi->hz (note $0))
+endsnippet
