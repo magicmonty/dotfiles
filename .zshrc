@@ -64,10 +64,10 @@ an() {
 }
 
 export TERM=xterm-256color
-export CLICOLOR=1
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export LS_COLORS="di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:"
-export GREP_OPTIONS='--color=auto'
+#export CLICOLOR=1
+#export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+#export LS_COLORS="di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:"
+#export GREP_OPTIONS='--color=auto'
 
 
 alias gs='git status '
@@ -79,5 +79,12 @@ alias gk='gitk --all&'
 
 alias got='git '
 alias get='git checkout'
+alias code='open "/Applications/Visual Studio Code.app" --args "$PWD"'
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+test -e ${HOME}/.keys && source ${HOME}/.keys
+
+# added by travis gem
+[ -f /Users/martingondermann/.travis/travis.sh ] && source /Users/martingondermann/.travis/travis.sh
+export PATH="/usr/local/sbin:$PATH:/usr/local/texlive/2015/bin/x86_64-darwin"
+export DYLD_LIBRARY_PATH="/usr/local/Cellar/mono/4.2.1.102_1/lib"
